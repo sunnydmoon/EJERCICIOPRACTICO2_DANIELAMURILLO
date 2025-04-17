@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Cartelera</title>
+</head>
+<body>
+    <h1>Películas en cartelera</h1>
+    <a th:href="@{/peliculas/nueva}">Agregar nueva película</a>
+    <ul>
+        <li th:each="pelicula : ${peliculas}">
+            <span th:text="${pelicula.titulo}">Título</span> - 
+            <span th:text="${pelicula.descripcion}">Descripción</span> - 
+            <a th:href="@{'/peliculas/eliminar/' + ${pelicula.id}}">Eliminar</a>
+        </li>
+    </ul>
+</body>
+</html>
